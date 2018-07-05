@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.shape.Circle?>
+
+
+<DialogPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="genesisprototype.controller.PCADetailsController">
+   <header>
+      <Label text="New PCA" />
+   </header>
+   <content>
+      <TextField promptText="Enter PCA" />
+   </content>
+   <graphic>
+      <Circle fill="DODGERBLUE" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+   </graphic>
+</DialogPane>
