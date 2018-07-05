@@ -1,21 +1,20 @@
-<html><head>
-  <SCRIPT src="./web-files/dtjava.js"></SCRIPT>
-<script>
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <SCRIPT src="https://java.com/js/dtjava.js"></SCRIPT><script>
     function launchApplication(jnlpfile) {
         dtjava.launch(            {
                 url : 'GenesisPrototype.jnlp',
-                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGpubHAgc3BlYz0iMS4wIiB4bWxuczpqZng9Imh0dHA6Ly9qYXZhZnguY29tIiBocmVmPSJHZW5lc2lzUHJvdG90eXBlLmpubHAiPgogIDxpbmZvcm1hdGlvbj4KICAgIDx0aXRsZT5HZW5lc2lzUHJvdG90eXBlPC90aXRsZT4KICAgIDx2ZW5kb3I+c2NvdHQ8L3ZlbmRvcj4KICAgIDxkZXNjcmlwdGlvbj5udWxsPC9kZXNjcmlwdGlvbj4KICAgIDxvZmZsaW5lLWFsbG93ZWQvPgogIDwvaW5mb3JtYXRpb24+CiAgPHJlc291cmNlcz4KICAgIDxqMnNlIHZlcnNpb249IjEuNisiIGhyZWY9Imh0dHA6Ly9qYXZhLnN1bi5jb20vcHJvZHVjdHMvYXV0b2RsL2oyc2UiLz4KICAgIDxqYXIgaHJlZj0iR2VuZXNpc1Byb3RvdHlwZS5qYXIiIHNpemU9IjIzMzkiIGRvd25sb2FkPSJlYWdlciIgLz4KICA8L3Jlc291cmNlcz4KICA8YXBwbGV0LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJjb20uamF2YWZ4Lm1haW4uTm9KYXZhRlhGYWxsYmFjayIgIG5hbWU9IkdlbmVzaXNQcm90b3R5cGUiID4KICAgIDxwYXJhbSBuYW1lPSJyZXF1aXJlZEZYVmVyc2lvbiIgdmFsdWU9IjguMCsiLz4KICA8L2FwcGxldC1kZXNjPgogIDxqZng6amF2YWZ4LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJnZW5lc2lzcHJvdG90eXBlLkdlbmVzaXNQcm90b3R5cGUiICBuYW1lPSJHZW5lc2lzUHJvdG90eXBlIiAvPgogIDx1cGRhdGUgY2hlY2s9ImFsd2F5cyIvPgo8L2pubHA+Cg=='
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48am5scCBzcGVjPSIxLjAiIHhtbG5zOmpmeD0iaHR0cDovL2phdmFmeC5jb20iIGhyZWY9IkdlbmVzaXNQcm90b3R5cGUuam5scCI+CiAgICA8aW5mb3JtYXRpb24+CiAgICAgICAgPHRpdGxlPkdlbmVzaXNQcm90b3R5cGU8L3RpdGxlPgogICAgICAgIDx2ZW5kb3I+c2NvdHQ8L3ZlbmRvcj4KICAgICAgICA8ZGVzY3JpcHRpb24+bnVsbDwvZGVzY3JpcHRpb24+CiAgICAgICAgPG9mZmxpbmUtYWxsb3dlZC8+CiAgICA8L2luZm9ybWF0aW9uPgogICAgPHVwZGF0ZSBjaGVjaz0iYWx3YXlzIi8+CiAgICA8cmVzb3VyY2VzPgogICAgICAgIDxqMnNlIHZlcnNpb249IjEwLjAuMSsiIGhyZWY9Imh0dHA6Ly9qYXZhLnN1bi5jb20vcHJvZHVjdHMvYXV0b2RsL2oyc2UiLz4KICAgICAgICA8amFyIGhyZWY9IkdlbmVzaXNQcm90b3R5cGUuamFyIiBzaXplPSI5NjY0IiBkb3dubG9hZD0iZWFnZXIiLz4KICAgIDwvcmVzb3VyY2VzPgogICAgPGpmeDpqYXZhZngtZGVzYyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgbWFpbi1jbGFzcz0iZ2VuZXNpc3Byb3RvdHlwZS5HZW5lc2lzUHJvdG90eXBlIiBuYW1lPSJHZW5lc2lzUHJvdG90eXBlIi8+Cjwvam5scD4KCg=='
             },
             {
-                javafx : '8.0+'
+                javafx : '10.0.1+'
             },
             {}
         );
         return false;
     }
-</script>
-
-<script>
+</script><script>
     function javafxEmbedgenesisprototype() {
         dtjava.embed(
             {
@@ -24,22 +23,29 @@
                 placeholder : 'javafx-app-placeholder',
                 width : '800',
                 height : '600',
-                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGpubHAgc3BlYz0iMS4wIiB4bWxuczpqZng9Imh0dHA6Ly9qYXZhZnguY29tIiBocmVmPSJHZW5lc2lzUHJvdG90eXBlLmpubHAiPgogIDxpbmZvcm1hdGlvbj4KICAgIDx0aXRsZT5HZW5lc2lzUHJvdG90eXBlPC90aXRsZT4KICAgIDx2ZW5kb3I+c2NvdHQ8L3ZlbmRvcj4KICAgIDxkZXNjcmlwdGlvbj5udWxsPC9kZXNjcmlwdGlvbj4KICAgIDxvZmZsaW5lLWFsbG93ZWQvPgogIDwvaW5mb3JtYXRpb24+CiAgPHJlc291cmNlcz4KICAgIDxqMnNlIHZlcnNpb249IjEuNisiIGhyZWY9Imh0dHA6Ly9qYXZhLnN1bi5jb20vcHJvZHVjdHMvYXV0b2RsL2oyc2UiLz4KICAgIDxqYXIgaHJlZj0iR2VuZXNpc1Byb3RvdHlwZS5qYXIiIHNpemU9IjIzMzkiIGRvd25sb2FkPSJlYWdlciIgLz4KICA8L3Jlc291cmNlcz4KICA8YXBwbGV0LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJjb20uamF2YWZ4Lm1haW4uTm9KYXZhRlhGYWxsYmFjayIgIG5hbWU9IkdlbmVzaXNQcm90b3R5cGUiID4KICAgIDxwYXJhbSBuYW1lPSJyZXF1aXJlZEZYVmVyc2lvbiIgdmFsdWU9IjguMCsiLz4KICA8L2FwcGxldC1kZXNjPgogIDxqZng6amF2YWZ4LWRlc2MgIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBtYWluLWNsYXNzPSJnZW5lc2lzcHJvdG90eXBlLkdlbmVzaXNQcm90b3R5cGUiICBuYW1lPSJHZW5lc2lzUHJvdG90eXBlIiAvPgogIDx1cGRhdGUgY2hlY2s9ImFsd2F5cyIvPgo8L2pubHA+Cg=='
+                jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48am5scCBzcGVjPSIxLjAiIHhtbG5zOmpmeD0iaHR0cDovL2phdmFmeC5jb20iIGhyZWY9IkdlbmVzaXNQcm90b3R5cGUuam5scCI+CiAgICA8aW5mb3JtYXRpb24+CiAgICAgICAgPHRpdGxlPkdlbmVzaXNQcm90b3R5cGU8L3RpdGxlPgogICAgICAgIDx2ZW5kb3I+c2NvdHQ8L3ZlbmRvcj4KICAgICAgICA8ZGVzY3JpcHRpb24+bnVsbDwvZGVzY3JpcHRpb24+CiAgICAgICAgPG9mZmxpbmUtYWxsb3dlZC8+CiAgICA8L2luZm9ybWF0aW9uPgogICAgPHVwZGF0ZSBjaGVjaz0iYWx3YXlzIi8+CiAgICA8cmVzb3VyY2VzPgogICAgICAgIDxqMnNlIHZlcnNpb249IjEwLjAuMSsiIGhyZWY9Imh0dHA6Ly9qYXZhLnN1bi5jb20vcHJvZHVjdHMvYXV0b2RsL2oyc2UiLz4KICAgICAgICA8amFyIGhyZWY9IkdlbmVzaXNQcm90b3R5cGUuamFyIiBzaXplPSI5NjY0IiBkb3dubG9hZD0iZWFnZXIiLz4KICAgIDwvcmVzb3VyY2VzPgogICAgPGpmeDpqYXZhZngtZGVzYyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgbWFpbi1jbGFzcz0iZ2VuZXNpc3Byb3RvdHlwZS5HZW5lc2lzUHJvdG90eXBlIiBuYW1lPSJHZW5lc2lzUHJvdG90eXBlIi8+Cjwvam5scD4KCg=='
             },
             {
-                javafx : '8.0+'
+                javafx : '10.0.1+'
             },
             {}
         );
     }
-    <!-- Embed FX application into web page once page is loaded -->
+    
+            <!-- Embed FX application into web page once page is loaded -->
     dtjava.addOnloadCallback(javafxEmbedgenesisprototype);
 </script>
-
-</head><body>
-<h2>Test page for <b>GenesisPrototype</b></h2>
-  <b>Webstart:</b> <a href='GenesisPrototype.jnlp' onclick="return launchApplication('GenesisPrototype.jnlp');">click to launch this app as webstart</a><br><hr><br>
-
-  <!-- Applet will be inserted here -->
-  <div id='javafx-app-placeholder'></div>
-</body></html>
+    </head>
+    <body>
+        <h2>
+            Test page for <b>GenesisPrototype</b>
+        </h2>
+        <b>Webstart:</b><a href="GenesisPrototype.jnlp" onclick="return launchApplication('GenesisPrototype.jnlp');">click to launch this app as webstart</a>
+        <br>
+        <hr>
+        <br>
+        
+        <!-- Applet will be inserted here -->
+        <div id="javafx-app-placeholder"></div>
+    </body>
+</html>
