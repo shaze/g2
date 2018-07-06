@@ -63,6 +63,7 @@ public class Open0Controller implements Initializable {
         dialogStage.setScene(scene);
         PCADetailsController controller = loader.getController();
         controller.setDialogStage(dialogStage);
+        System.out.println("Switching to dialog");
         dialogStage.showAndWait();
         
         

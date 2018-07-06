@@ -24,6 +24,7 @@ package genesisprototype.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -41,10 +42,28 @@ public class PCADetailsController {
     private Stage dialogStage;
     private boolean okClicked = false;
 
+    private String pca_fname_s, fam_fname_s,  pheno_fname_s;
     /**
      * Initializes the controller class. This method is automatically called
      * after the fxml file has been loaded.
      */
+    
+    @FXML 
+    Button pcaEntryOKButton;
+
+    @FXML
+    Button pcaEntryCancelButton;
+    
+    @FXML
+    TextField pca_fname;
+    
+    @FXML 
+    TextField fam_fname;
+            
+    @FXML
+    TextField pheno_fname;
+    
+    
     @FXML
     private void initialize() {
     }
@@ -68,14 +87,34 @@ public class PCADetailsController {
         return okClicked;
     }
 
+    
+    @FXML void handlePcaFname() {
+        pca_fname_s = pca_fname.getText();  
+        fam_fname.setText(pca_fname_s);
+        System.out.println(pca_fname_s);
+        
+    }
+    
+    @FXML void handleFamFname() {
+        fam_fname_s = pca_fname.getText(); 
+          System.out.println(fam_fname_s);
+    }   
+    
+    @FXML void handlePhenoFname() {
+        pheno_fname_s = pca_fname.getText();
+        System.out.println(pheno_fname_s);
+    } 
+    
+    
     /**
      * Called when the user clicks ok.
      */
     @FXML
-    private void handleOk() {
+    private void handlePcaEntryOK() {
 
             okClicked = true;
             dialogStage.close();
+            System.out.println("OK");
        
     }
 
@@ -83,7 +122,8 @@ public class PCADetailsController {
      * Called when the user clicks cancel.
      */
     @FXML
-    private void handleCancel() {
+    private void handlePcaEntryCancel() {
+        System.out.println("Cancel");
         dialogStage.close();
     }
 
