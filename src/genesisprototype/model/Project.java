@@ -9,9 +9,12 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
+
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+
 
 /**
  *
@@ -48,7 +51,9 @@ public class Project {
     }
 
 
-    private BufferedReader openFile(String name)  throws FileNotFoundException {
+
+    private BufferedReader openFile(String name) throws FileNotFoundException  {
+
 	InputStreamReader is = new InputStreamReader(new FileInputStream(name));
 	BufferedReader       dinp  = new BufferedReader(is);
 	return dinp;
