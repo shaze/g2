@@ -52,7 +52,7 @@ public class Open0Controller implements Initializable {
     private void newPCA(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(GenesisPrototype.class.getResource("view/PCADialogEntry.fxml"));
-        DialogPane page = (DialogPane) loader.load();
+        AnchorPane page = (AnchorPane) loader.load();
         
         Stage dialogStage = new Stage();
         dialogStage.setTitle("New PCA details");

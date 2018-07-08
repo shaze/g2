@@ -8,7 +8,7 @@
     <update check="always"/>
     <resources>
         <j2se version="10.0.1+" href="http://java.sun.com/products/autodl/j2se"/>
-        <jar href="GenesisPrototype.jar" size="9430" download="eager"/>
+        <jar href="GenesisPrototype.jar" size="9656" download="eager"/>
     </resources>
     <jfx:javafx-desc width="800" height="600" main-class="genesisprototype.GenesisPrototype" name="GenesisPrototype"/>
 </jnlp>
