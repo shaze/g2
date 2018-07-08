@@ -29,11 +29,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-/**
- * Dialog to edit details of a person.
- * 
- * @author Marco Jakob
- */
+
 public class PCADetailsController {
 
     
@@ -66,6 +62,7 @@ public class PCADetailsController {
     
     @FXML
     private void initialize() {
+        System.out.println("init the pcadetailscontroller");
     }
 
     /**
