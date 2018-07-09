@@ -2,8 +2,10 @@ package genesisprototype.controller;
 
 
 import genesisprototype.GenesisPrototype;
+import genesisprototype.model.Project;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,12 +13,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -49,25 +57,63 @@ public class Open0Controller implements Initializable {
     private MenuBar menuBar;
     
     @FXML
-    private void newPCA(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(GenesisPrototype.class.getResource("view/PCADialogEntry.fxml"));
-        AnchorPane page = (AnchorPane) loader.load();
-        
+    private MenuItem newpca;
+    
+    @FXML 
+    private AnchorPane  projectAnchor;
+    
+    private Project project;
+    
+    private VBox projectVBox(ProjectDetailsController control) {
+       String proj_name  =  control.getProjectName();
+       String fam_name   =  control.getFam();
+       String pheno_name =  control.getPheno();
+       VBox v = new VBox();
+       HBox h = new HBox(10);
+       Label lab = new Label();
+       lab.setText("Project: "+proj_name);
+       Label fam = new Label();
+       fam.setText(" FAM file: "+fam_name);
+       Label pheno = new Label();
+       if (pheno_name.length()==0) pheno_name="None";
+       pheno.setText(" Pheno file: "+pheno_name);
+       h.getChildren().addAll(lab, fam, pheno);
+       h.setPadding(new Insets(10,10,10,10));
+       v.getChildren().add(h);
+       return v;
+    }
+    
+    @FXML
+    private void newProject(ActionEvent event) throws IOException {
+        ProjectDetailsController controller;
         Stage dialogStage = new Stage();
-        dialogStage.setTitle("New PCA details");
+        dialogStage.setTitle("New Project details");
         dialogStage.initModality(Modality.WINDOW_MODAL);
         Window primaryStage = menuBar.getScene().getWindow();
         dialogStage.initOwner(primaryStage);
-        Scene scene = new Scene(page);
+        controller = new ProjectDetailsController("view/ProjDialogEntry.fxml");
+        Scene scene = new Scene(controller);
         dialogStage.setScene(scene);
-        PCADetailsController controller = loader.getController();
         controller.setDialogStage(dialogStage);
-        System.out.println("Switching to dialog");
-        dialogStage.showAndWait();
-        
+        dialogStage.showAndWait();  
+        newpca.setDisable(false);
+        projectAnchor.setVisible(true);
+        projectAnchor.getChildren().add(projectVBox(controller));
+        project = controller.getProject();
         
     }
+    @FXML
+    private void newPCA(ActionEvent event) throws IOException {
+        Window primaryStage = menuBar.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        File file = fileChooser.showOpenDialog(primaryStage);
+        System.out.println("Switching to dialog"+file.getCanonicalPath());
+        project.addPCA(file);
+        
+    }
+    
+    
+     
 
     
     @FXML

@@ -10,7 +10,12 @@ package genesisprototype.model;
  * @author Scott Hazelhurst
  */
 
+
+
+
+
 public class Fam {
+    String fid, iid;
     int pat;
     int mat;
     int sex;
@@ -23,12 +28,16 @@ public class Fam {
      * @param sex: sex of individual
      * @param phe: phenotype
      */
-    public Fam(int pat, int mat, int sex, String phe) {
-        
-       this.pat = pat;
-       this.mat = mat;
-       this.sex = sex;
-       this.phe = phe;
+    
+
+    public Fam(String s) {
+       String fields [] = s.split("\\s");
+       fid = fields[0];
+       iid = fields[1];
+       pat = Integer.parseInt(fields[2]);
+       mat = Integer.parseInt(fields[3]);
+       sex = Integer.parseInt(fields[4]);
+       phe = fields[5];
     }
 }
 

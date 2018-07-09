@@ -21,50 +21,76 @@ package genesisprototype.controller;
  * @author scott
  */
  
+import genesisprototype.GenesisPrototype;
+import genesisprototype.model.Project;
+import java.io.File;
+import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 
 
-public class PCADetailsController {
+public class ProjectDetailsController extends AnchorPane {
 
-    
-
+   
 
     private Stage dialogStage;
     private boolean okClicked = false;
 
-    private String pca_fname_s, fam_fname_s,  pheno_fname_s;
+    private String  fam_fname_s="",  pheno_fname_s="";
     /**
      * Initializes the controller class. This method is automatically called
      * after the fxml file has been loaded.
      */
     
     @FXML 
-    Button pcaEntryOKButton;
+    Button entryOKButton;
 
     @FXML
-    Button pcaEntryCancelButton;
+    Button entryCancelButton;
     
-    @FXML
-    TextField pca_fname;
-    
+
     @FXML 
-    TextField fam_fname;
+    Button fam_fname;
+
+    public String getFam() {
+        return fam_fname_s;
+    }
+
+    public String getPheno() {
+        return pheno_fname_s;
+    }
             
     @FXML
-    TextField pheno_fname;
+    Button pheno_fname;
     
+    @FXML private  TextField proj_name;
+    
+    private Project project;
+
+    public Project getProject() {
+        return project;
+    }
     
     @FXML
     private void initialize() {
         System.out.println("init the pcadetailscontroller");
     }
-
+    
+    public ProjectDetailsController(String fxml) throws IOException {
+        FXMLLoader loader = new FXMLLoader(GenesisPrototype.class.getResource(fxml));
+        loader.setRoot(this);
+        loader.setController(this);
+        loader.load();
+    }
+    
     /**
      * Sets the stage of this dialog.
      * 
@@ -85,33 +111,50 @@ public class PCADetailsController {
     }
 
     
-    @FXML void handlePcaFname() {
-        pca_fname_s = pca_fname.getText();  
-        fam_fname.setText(pca_fname_s);
-        System.out.println(pca_fname_s);
+    private File getFile(String which) {
+       File wanted;
+       FileChooser fileChooser = new FileChooser();
+       fileChooser.setTitle(which);
+       wanted = fileChooser.showOpenDialog(dialogStage); 
+       return wanted;
+        
+    }
+    
+  
+    
+    @FXML void handleProjectName() {
+        System.out.println(proj_name);
+        if (fam_fname.getText().length()>0)  
+          entryOKButton.setDisable(false);
         
     }
     
     @FXML void handleFamFname() {
-        fam_fname_s = pca_fname.getText(); 
-          System.out.println(fam_fname_s);
+      File fam = getFile("Choose FAM file");  
+      fam_fname_s=fam.getAbsolutePath();
+      fam_fname.setText(fam.getName());
+      fam_fname.setStyle("-fx-text-fill: green");
+      if (proj_name.getText().length()>0)  
+          entryOKButton.setDisable(false);
+
     }   
     
     @FXML void handlePhenoFname() {
-        pheno_fname_s = pca_fname.getText();
-        System.out.println(pheno_fname_s);
-    } 
+      File phen = getFile("Choose FAM file");  
+      pheno_fname_s = phen.getAbsolutePath();
+      pheno_fname.setText(phen.getName());
+      pheno_fname.setStyle("-fx-text-fill: green");
+    }  
     
     
     /**
      * Called when the user clicks ok.
      */
     @FXML
-    private void handlePcaEntryOK() {
-
+    private void handlePcaEntryOK() throws IOException {
             okClicked = true;
             dialogStage.close();
-            System.out.println("OK");
+            project = new Project(proj_name.getText(), fam_fname_s, pheno_fname_s);
        
     }
 
@@ -124,6 +167,12 @@ public class PCADetailsController {
         dialogStage.close();
     }
 
+    
+    public String getProjectName() {
+        return proj_name.getText();
+    }
+    
+    
     /**
      * Validates the user input in the text fields.
      * 
