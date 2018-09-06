@@ -17,6 +17,8 @@ public abstract class Graph {
     protected int margin[];
     protected int size[];
     
+    
+    
  
     
 }
