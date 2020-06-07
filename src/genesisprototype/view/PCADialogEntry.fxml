@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="genesisprototype.controller.PCADetailsController">
+   <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="pca_fname" prefHeight="27.0" prefWidth="238.0" promptText="Enter PCA File Name" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></TextField>
+            <TextField fx:id="fam_fname" prefHeight="27.0" prefWidth="238.0" promptText="Enter FAM file (if not in PCA)" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></TextField>
+            <TextField fx:id="pheno_fname" prefHeight="27.0" prefWidth="238.0" promptText="Phenotype file (optional)" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="1.0" />
+               </GridPane.margin></TextField>
+            <Button fx:id="pcaEntryOKButton" alignment="TOP_CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handlePcaEntryOK" prefWidth="80.0" text="OK" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="pcaEntryCancelButton" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handlePcaEntryCancel" prefWidth="80.0" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Button>
+            <Label text="PCA File">
+               <GridPane.margin>
+                  <Insets left="3.0" />
+               </GridPane.margin></Label>
+            <Label text="FAM file" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="3.0" />
+               </GridPane.margin></Label>
+            <Label text="Pheno file" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="3.0" />
+               </GridPane.margin></Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
